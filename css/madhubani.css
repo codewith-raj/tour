@@ -1,0 +1,659 @@
+/* =============================================
+   Madhubani Art Theme — Explore Bihar
+   Folk-art inspired design layer
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ---------- Madhubani Colour Palette ---------- */
+:root {
+  --m-red:      #c0392b;
+  --m-saffron:  #e67e22;
+  --m-turmeric: #f1c40f;
+  --m-indigo:   #1a237e;
+  --m-teal:     #00695c;
+  --m-rose:     #e91e63;
+  --m-earth:    #5d4037;
+  --m-cream:    #fdf6e3;
+  --m-black:    #1a0a00;
+  --m-border:   #c0392b;
+
+  /* Override site primaries with folk palette */
+  --primary:    #00695c;
+  --secondary:  #e67e22;
+  --accent:     #f1c40f;
+  --bg:         #fdf6e3;
+  --text:       #1a0a00;
+  --text-light: #5d4037;
+  --border:     #d4a373;
+}
+
+/* ---------- Global Madhubani Background ---------- */
+body {
+  background-color: var(--m-cream);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(192,57,43,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(26,35,126,0.04) 0%, transparent 50%);
+}
+
+/* ---------- SVG Folk-Art Border Pattern (reusable) ---------- */
+.madhubani-border {
+  position: relative;
+}
+.madhubani-border::before,
+.madhubani-border::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='18'%3E%3Ccircle cx='30' cy='9' r='5' fill='none' stroke='%23c0392b' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='9' r='2' fill='%23e67e22'/%3E%3Cline x1='0' y1='9' x2='24' y2='9' stroke='%23c0392b' stroke-width='1.5'/%3E%3Cline x1='36' y1='9' x2='60' y2='9' stroke='%23c0392b' stroke-width='1.5'/%3E%3Cpath d='M10 5 Q15 1 20 5 Q15 9 10 5z' fill='%231a237e' opacity='0.6'/%3E%3Cpath d='M40 5 Q45 1 50 5 Q45 9 40 5z' fill='%231a237e' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}
+.madhubani-border::before { margin-bottom: 8px; }
+.madhubani-border::after  { margin-top: 8px; }
+
+/* ---------- Decorative Section Divider ---------- */
+.folk-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px auto 40px;
+  max-width: 400px;
+}
+.folk-divider::before,
+.folk-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--m-red), transparent);
+}
+.folk-divider-icon {
+  font-size: 1.4rem;
+  animation: folkSpin 8s linear infinite;
+}
+@keyframes folkSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---------- Navbar — Madhubani Strip ---------- */
+.navbar {
+  background: rgba(253,246,227,0.97) !important;
+  border-bottom: 3px solid var(--m-red) !important;
+  border-top: 4px solid var(--m-indigo) !important;
+  box-shadow: 0 2px 12px rgba(192,57,43,0.12);
+}
+.navbar::after {
+  content: '';
+  display: block;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='6'%3E%3Crect x='0' y='0' width='30' height='6' fill='%23fdf6e3'/%3E%3Ccircle cx='15' cy='3' r='2.5' fill='%23e67e22'/%3E%3Ccircle cx='0' cy='3' r='1.5' fill='%23c0392b'/%3E%3Ccircle cx='30' cy='3' r='1.5' fill='%23c0392b'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: -9px;
+  left: 0; right: 0;
+  z-index: 999;
+}
+.nav-logo {
+  font-family: 'Tiro Devanagari Hindi', serif !important;
+  font-size: 1.5rem !important;
+  color: var(--m-indigo) !important;
+  letter-spacing: 0.5px;
+}
+.nav-logo span { color: var(--m-red) !important; }
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--m-red) !important;
+  color: var(--m-cream) !important;
+}
+
+/* ---------- Hero Madhubani Overlay ---------- */
+.hero {
+  background: linear-gradient(135deg, #1a237e 0%, #00695c 60%, #c0392b 100%) !important;
+  border-bottom: 8px solid var(--m-saffron);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='2'/%3E%3Ccircle cx='60' cy='60' r='40' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='2'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='2'/%3E%3Cpath d='M60 5 L63 55 L60 60 L57 55Z' fill='rgba(255,255,255,0.05)'/%3E%3Cpath d='M60 115 L63 65 L60 60 L57 65Z' fill='rgba(255,255,255,0.05)'/%3E%3Cpath d='M5 60 L55 63 L60 60 L55 57Z' fill='rgba(255,255,255,0.05)'/%3E%3Cpath d='M115 60 L65 63 L60 60 L65 57Z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero .tag {
+  background: var(--m-saffron) !important;
+  color: var(--m-black) !important;
+  border: 1.5px solid var(--m-red);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+}
+.hero h1 span { color: var(--m-turmeric) !important; }
+
+/* ---------- Animated Fish Motifs (Madhubani icon) ---------- */
+.hero-fish {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0.18;
+}
+.hero-fish svg {
+  animation: fishFloat 4s ease-in-out infinite;
+}
+.hero-fish svg:nth-child(2) { animation-delay: 1.5s; }
+.hero-fish svg:nth-child(3) { animation-delay: 3s; }
+@keyframes fishFloat {
+  0%, 100% { transform: translateX(0) rotate(-5deg); }
+  50%       { transform: translateX(10px) rotate(5deg); }
+}
+
+/* ---------- Stats Bar ---------- */
+.stats-bar {
+  background: var(--m-indigo) !important;
+  border-top: 4px solid var(--m-saffron);
+  border-bottom: 4px solid var(--m-saffron);
+}
+.stat-num { color: var(--m-turmeric) !important; }
+
+/* ---------- Section Headings ---------- */
+.section-title {
+  font-family: 'Tiro Devanagari Hindi', serif !important;
+  color: var(--m-indigo) !important;
+  letter-spacing: 0.5px;
+}
+.tag {
+  background: var(--m-red) !important;
+  color: var(--m-cream) !important;
+  border-radius: 4px !important;
+  letter-spacing: 2px;
+  font-size: 0.7rem !important;
+}
+
+/* ---------- Cards — Folk Border ---------- */
+.card {
+  background: #fff !important;
+  border: 2px solid var(--m-red) !important;
+  border-radius: 4px !important;
+  box-shadow: 4px 4px 0 var(--m-saffron), 8px 8px 0 rgba(192,57,43,0.15) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 6px 6px 0 var(--m-saffron), 12px 12px 0 rgba(192,57,43,0.2) !important;
+}
+.card-body h3 {
+  color: var(--m-indigo) !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--m-red) !important;
+  border-color: var(--m-red) !important;
+  border-radius: 4px !important;
+  box-shadow: 3px 3px 0 var(--m-earth) !important;
+  transition: all 0.25s ease !important;
+}
+.btn-primary:hover {
+  background: var(--m-indigo) !important;
+  border-color: var(--m-indigo) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 5px 5px 0 var(--m-earth) !important;
+}
+.btn-outline {
+  border-color: var(--m-red) !important;
+  color: var(--m-red) !important;
+  border-radius: 4px !important;
+}
+.btn-outline:hover {
+  background: var(--m-red) !important;
+  color: var(--m-cream) !important;
+}
+
+/* ---------- Page Hero (inner pages) ---------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--m-indigo) 0%, var(--m-teal) 100%) !important;
+  border-bottom: 8px solid var(--m-saffron) !important;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='35' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1.5'/%3E%3Cpath d='M40 5 Q55 20 70 40 Q55 60 40 75 Q25 60 10 40 Q25 20 40 5z' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+.page-hero h1 {
+  font-family: 'Tiro Devanagari Hindi', serif !important;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+}
+
+/* ---------- About Section ---------- */
+.about-img-wrap {
+  border: 4px solid var(--m-red) !important;
+  box-shadow: 8px 8px 0 var(--m-saffron) !important;
+  border-radius: 4px !important;
+}
+.about-badge {
+  background: var(--m-indigo) !important;
+  border: 2px solid var(--m-turmeric);
+}
+.about-text h2 {
+  font-family: 'Tiro Devanagari Hindi', serif !important;
+  color: var(--m-indigo) !important;
+}
+.about-list li::before { color: var(--m-red) !important; }
+
+/* ---------- Culture Cards ---------- */
+.culture-card {
+  border-top: 4px solid var(--m-red) !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+}
+.culture-card:hover {
+  box-shadow: 4px 4px 0 var(--m-saffron) !important;
+  border-color: var(--m-red) !important;
+}
+
+/* ---------- Destination Cards ---------- */
+.dest-card {
+  border: 2px solid var(--m-red) !important;
+  border-radius: 4px !important;
+  box-shadow: 5px 5px 0 rgba(192,57,43,0.2) !important;
+}
+.dest-info h2 { color: var(--m-indigo) !important; }
+
+.highlight-pill {
+  background: rgba(192,57,43,0.08) !important;
+  color: var(--m-red) !important;
+  border: 1px solid rgba(192,57,43,0.3) !important;
+}
+
+/* ---------- Timeline ---------- */
+.tl-item::before { background: var(--m-red) !important; box-shadow: 0 0 0 2px var(--m-red) !important; }
+.tl-item h4 { color: var(--m-red) !important; }
+.tl-item .tl-date { color: var(--m-saffron) !important; }
+
+/* ---------- Gallery Items ---------- */
+.gallery-item {
+  border: 3px solid var(--m-red) !important;
+  border-radius: 4px !important;
+  box-shadow: 4px 4px 0 var(--m-saffron) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+.gallery-item:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 6px 6px 0 var(--m-saffron) !important;
+}
+.gallery-overlay {
+  background: linear-gradient(to top, rgba(26,35,126,0.85) 0%, transparent 70%) !important;
+}
+
+/* ---------- Form ---------- */
+.contact-form {
+  border: 2px solid var(--m-red) !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--m-red) !important;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12) !important;
+}
+
+/* ---------- Guide / Season Table ---------- */
+.season-table th { background: var(--m-indigo) !important; }
+.season-table tr:nth-child(even) td { background: rgba(253,246,227,0.7) !important; }
+.guide-card h3 { color: var(--m-red) !important; }
+.guide-card ul li::before { color: var(--m-saffron) !important; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--m-indigo) !important;
+  border-top: 6px solid var(--m-saffron) !important;
+}
+footer .nav-logo span { color: var(--m-turmeric) !important; }
+.footer-col ul li a:hover { color: var(--m-turmeric) !important; }
+
+/* ---------- CTA Banner ---------- */
+section[style*="linear-gradient"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- Floating Lotus Animation ---------- */
+.lotus-float {
+  display: inline-block;
+  animation: lotusFloat 3s ease-in-out infinite;
+}
+@keyframes lotusFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ---------- Madhubani Mandala Watermark ---------- */
+.mandala-bg {
+  position: relative;
+}
+.mandala-bg::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='none' stroke='%23c0392b' stroke-width='1.5' opacity='0.12'/%3E%3Ccircle cx='100' cy='100' r='75' fill='none' stroke='%231a237e' stroke-width='1' opacity='0.1'/%3E%3Ccircle cx='100' cy='100' r='55' fill='none' stroke='%23e67e22' stroke-width='1' opacity='0.1'/%3E%3Ccircle cx='100' cy='100' r='35' fill='none' stroke='%23c0392b' stroke-width='1' opacity='0.1'/%3E%3Ccircle cx='100' cy='100' r='15' fill='%23e67e22' opacity='0.08'/%3E%3Cpath d='M100 5 L104 95 L100 100 L96 95Z' fill='%23c0392b' opacity='0.1'/%3E%3Cpath d='M195 100 L105 104 L100 100 L105 96Z' fill='%23c0392b' opacity='0.1'/%3E%3Cpath d='M100 195 L96 105 L100 100 L104 105Z' fill='%23c0392b' opacity='0.1'/%3E%3Cpath d='M5 100 L95 96 L100 100 L95 104Z' fill='%23c0392b' opacity='0.1'/%3E%3Cpath d='M100 5 Q120 50 100 100 Q80 50 100 5Z' fill='%231a237e' opacity='0.07'/%3E%3Cpath d='M195 100 Q150 120 100 100 Q150 80 195 100Z' fill='%231a237e' opacity='0.07'/%3E%3Cpath d='M100 195 Q80 150 100 100 Q120 150 100 195Z' fill='%231a237e' opacity='0.07'/%3E%3Cpath d='M5 100 Q50 80 100 100 Q50 120 5 100Z' fill='%231a237e' opacity='0.07'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  animation: mandalaRotate 30s linear infinite;
+}
+@keyframes mandalaRotate {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ---------- Section ornamental top border ---------- */
+.section-pad {
+  position: relative;
+}
+.section-ornament {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  letter-spacing: 8px;
+  color: var(--m-red);
+  opacity: 0.7;
+  animation: ornamentPulse 3s ease-in-out infinite;
+}
+@keyframes ornamentPulse {
+  0%, 100% { opacity: 0.7; letter-spacing: 8px; }
+  50%       { opacity: 1;   letter-spacing: 12px; }
+}
+
+/* ---------- Highlight Pill Madhubani ---------- */
+.m-pill {
+  display: inline-block;
+  padding: 3px 12px;
+  border: 1.5px solid var(--m-red);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  color: var(--m-red);
+  font-weight: 600;
+  background: rgba(192,57,43,0.06);
+  margin: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Madhubani Art Banner ---------- */
+.art-banner {
+  background: var(--m-indigo);
+  color: var(--m-cream);
+  padding: 20px;
+  text-align: center;
+  border-top: 4px solid var(--m-saffron);
+  border-bottom: 4px solid var(--m-saffron);
+  font-size: 0.88rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+.art-banner span {
+  color: var(--m-turmeric);
+  margin: 0 16px;
+}
+.art-banner-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: artMarquee 28s linear infinite;
+}
+@keyframes artMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- Hero Madhubani Wave Border ---------- */
+.hero-madhubani-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 0;
+}
+
+/* ---------- Hero Peacock Motif ---------- */
+.hero-peacock {
+  position: absolute;
+  left: 3%;
+  bottom: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ---------- Art Showcase Section ---------- */
+.madhubani-showcase-section {
+  background: linear-gradient(135deg, #1a237e 0%, #00695c 100%);
+  color: #fdf6e3;
+  position: relative;
+  overflow: hidden;
+}
+.madhubani-showcase-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='35' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1.5'/%3E%3Cpath d='M40 5 Q55 20 70 40 Q55 60 40 75 Q25 60 10 40 Q25 20 40 5z' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.art-showcase-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.art-showcase-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.art-stat-card {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(230,126,34,0.5);
+  border-radius: 4px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.art-stat-card:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-4px);
+}
+.art-stat-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f1c40f;
+  margin-bottom: 6px;
+}
+.art-stat-label {
+  font-size: 0.78rem;
+  color: rgba(253,246,227,0.75);
+  line-height: 1.4;
+}
+
+/* ---------- Madhubani Art Section tint ---------- */
+.madhubani-art-section {
+  background: #fdf6e3;
+}
+
+/* ---------- Professional Section Heading polish ---------- */
+.section-title {
+  font-size: 2.1rem !important;
+  letter-spacing: -0.3px;
+}
+.section-subtitle {
+  font-size: 1.02rem !important;
+  line-height: 1.75;
+}
+
+/* ---------- Card image overlay gradient ---------- */
+.card-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,35,126,0.15) 0%, transparent 50%);
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.card:hover .card-img-wrap::after { opacity: 1; }
+
+/* ---------- Destination cards Madhubani left stripe ---------- */
+.dest-card {
+  border-left: 5px solid var(--m-red) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-fish { display: none; }
+  .hero-peacock { display: none; }
+  .mandala-bg::before { display: none; }
+  .art-showcase-inner { grid-template-columns: 1fr; gap: 32px; }
+  .art-showcase-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .art-showcase-stats { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   SMOOTH & POLISHED FEEL ADDITIONS
+   ============================================ */
+
+/* Smooth scroll for entire page */
+html { scroll-behavior: smooth; }
+
+/* Page fade-in on load */
+body {
+  animation: pageLoad 0.6s ease both;
+}
+@keyframes pageLoad {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Smoother card transitions */
+.card, .culture-card, .guide-card, .dest-card, .gallery-item {
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: transform;
+}
+
+/* Smooth button interactions */
+.btn {
+  transition: all 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: transform;
+}
+.btn:active {
+  transform: translateY(1px) scale(0.98) !important;
+}
+
+/* Nav link smooth hover */
+.nav-links a {
+  transition: background 0.22s ease, color 0.22s ease !important;
+}
+
+/* Image zoom smoother */
+.card-img, .gallery-item img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Navbar scroll shadow effect (applied via JS) */
+.navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(26,35,126,0.18) !important;
+}
+
+/* Folk divider line smoother gradient */
+.folk-divider::before,
+.folk-divider::after {
+  transition: opacity 0.3s ease;
+}
+
+/* Input focus smooth */
+input, select, textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+}
+
+/* Scroll-reveal base state */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* Art banner smooth marquee effect */
+.art-banner {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Highlight pill hover */
+.highlight-pill, .m-pill {
+  transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+.highlight-pill:hover, .m-pill:hover {
+  transform: scale(1.05);
+}
+
+/* Footer link smooth */
+.footer-col ul li a {
+  transition: opacity 0.2s ease, color 0.2s ease !important;
+}
+
+/* Gallery overlay smoother */
+.gallery-overlay {
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Stat numbers pop-in */
+.stat-num {
+  display: inline-block;
+  animation: statPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.8s;
+}
+@keyframes statPop {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* About badge float */
+.about-badge {
+  animation: badgeFloat 4s ease-in-out infinite;
+}
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+

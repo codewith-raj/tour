@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A visual journey through Bihar's sacred sites, folk art, festivals, wildlife, and cultural landscapes &mdash; photography gallery for Explore Bihar." />
+  <title>Photo Gallery &mdash; Explore Bihar</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/madhubani.css" />
+  <style>
+    /* Gallery page specific extras */
+    .gallery-filter {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .gallery-caption {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="art-banner" role="complementary" aria-label="Madhubani cultural banner">
+    <div class="art-banner-inner">
+      &#x1F41F; &nbsp; Mithila &middot; Madhubani &middot; Mahabodhi &middot; Mithila &nbsp; &#x273F; &nbsp; Heart of Ancient India &nbsp; &#x1F338; &nbsp; &nbsp; &nbsp;
+      &#x1F41F; &nbsp; Mithila &middot; Madhubani &middot; Mahabodhi &middot; Mithila &nbsp; &#x273F; &nbsp; Heart of Ancient India &nbsp; &#x1F338; &nbsp; &nbsp; &nbsp;
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Explore<span>Bihar</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="culture.html">Culture</a></li>
+          <li><a href="travelguide.html">Travel Guide</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero" aria-label="Gallery page header">
+      <h1>Bihar in Every Frame</h1>
+      <p>Photography cannot fully hold what Bihar offers, but it comes close. Temples that outlasted empires, festivals that illuminate rivers, forests alive with tigers, and paintings that speak in symbols older than words.</p>
+    </section>
+
+    <section class="section-pad" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-ornament" aria-hidden="true">&#x1F41F; &#x273F; &#x1F41F;</div>
+        <span class="tag">Visual Journey</span>
+        <h2 class="section-title" id="gallery-heading">Sacred &middot; Wild &middot; Painted &middot; Alive</h2>
+        <p class="section-subtitle">Each image is a doorway. Hover to read what lies behind it.</p>
+        <div class="folk-divider" aria-hidden="true"><span class="folk-divider-icon">&#x1F338;</span></div>
+
+        
+        <div class="gallery-filter" role="group" aria-label="Filter gallery by category">
+          <button class="filter-btn active" id="btn-all">All Photos</button>
+          <button class="filter-btn" id="btn-heritage">Heritage</button>
+          <button class="filter-btn" id="btn-nature">Nature</button>
+          <button class="filter-btn" id="btn-culture">Culture</button>
+        </div>
+
+        
+        <div class="gallery-grid" role="list" aria-label="Photo gallery">
+
+          
+          <div class="gallery-item wide" role="listitem">
+            <img src="images/hero-bg.png" alt="Mahabodhi Temple at Bodh Gaya glowing in warm golden light at dusk" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Mahabodhi Temple — Bodh Gaya</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/valmiki.png" alt="Royal Bengal tiger resting in dappled forest light at Valmiki Tiger Reserve" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Tiger — Valmiki Reserve</span>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item" role="listitem">
+            <img src="images/nalanda.png" alt="Sunrise over the ancient ruins of Nalanda University with red brick columns" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Nalanda Ruins — 5th Century CE</span>
+            </div>
+          </div>
+
+          <div class="gallery-item wide" role="listitem">
+            <img src="images/chhath.png" alt="Thousands gathered at the Ganga ghat for Chhath Puja evening prayer at sunset" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Chhath Puja — Ganga Ghat</span>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item" role="listitem">
+            <img src="images/madhubani.png" alt="Detail of Madhubani painting showing peacock and lotus motifs in bright natural colours" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Madhubani Folk Art — Mithila</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/rajgir.png" alt="Cable car ascending the green hillside to the Vishwa Shanti Stupa at Rajgir" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Rajgir Ropeway &amp; Stupa</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/hero-bg.png" alt="Bodhi tree inside Mahabodhi Temple complex draped with coloured prayer flags" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Sacred Bodhi Tree — Bodh Gaya</span>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item wide" role="listitem">
+            <img src="images/valmiki.png" alt="Dense Terai forest at Valmiki Tiger Reserve in West Champaran, Bihar" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Terai Forest — West Champaran</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/chhath.png" alt="Devotee carrying bamboo basket with offerings during Chhath Puja procession" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Chhath Offerings — Dala Chhath</span>
+            </div>
+          </div>
+
+          
+          <div class="gallery-item" role="listitem">
+            <img src="images/nalanda.png" alt="Archaeological excavation area showing intact brick walls and corridors of Nalanda" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Nalanda Excavation Site</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/madhubani.png" alt="Artist applying natural colour to Madhubani canvas with fine brush" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Madhubani Artist at Work</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" role="listitem">
+            <img src="images/rajgir.png" alt="Ancient hot spring at Brahmakund Rajgir surrounded by stone temple structures" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption">Brahmakund Hot Springs — Rajgir</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="text-align:center;margin-top:36px;color:var(--text-light);font-size:0.88rem;">
+          All images are original and generated for this project. © Explore Bihar COM4014
+        </p>
+
+      </div>
+    </section>
+
+    
+    <section style="background:var(--primary);padding:60px 5%;text-align:center;color:#fff;" aria-labelledby="gallery-cta">
+      <div class="container">
+        <h2 id="gallery-cta" style="font-size:1.7rem;margin-bottom:12px;">Want to See These Places in Person?</h2>
+        <p style="opacity:0.85;max-width:500px;margin:0 auto 26px;font-size:0.98rem;">Read the travel guide for practical tips on getting to Bihar, where to stay, and how to make the most of your visit.</p>
+        <a href="travelguide.html" class="btn btn-primary" style="background:#f59e0b;color:#1e293b;border-color:#f59e0b;">Plan Your Trip</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">Explore<span style="color:#f59e0b;">Bihar</span></div>
+          <p>Your trusted guide to discovering the history, culture, and natural beauty of Bihar — one of India's most ancient and fascinating states.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="travelguide.html">Travel Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Top Destinations</h4>
+          <ul>
+            <li><a href="destinations.html#bodh-gaya">Bodh Gaya</a></li>
+            <li><a href="destinations.html#nalanda">Nalanda</a></li>
+            <li><a href="destinations.html#rajgir">Rajgir</a></li>
+            <li><a href="destinations.html#patna-sahib">Patna Sahib</a></li>
+            <li><a href="destinations.html#valmiki">Valmiki Reserve</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Travel Info</h4>
+          <ul>
+            <li><a href="travelguide.html#best-time">Best Time to Visit</a></li>
+            <li><a href="travelguide.html#transport">Getting There</a></li>
+            <li><a href="travelguide.html#hotels">Where to Stay</a></li>
+            <li><a href="travelguide.html#budget">Budget Tips</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Explore Bihar Tourism Guide &mdash; COM4014 Assignment Project</span>
+        <span>Educational purposes only | All content is original</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const btn = document.getElementById('hamburger');
+    const links = document.getElementById('nav-links');
+    btn.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    // Simple filter buttons (visual only — all images shown)
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        filterBtns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
