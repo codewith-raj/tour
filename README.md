@@ -173,20 +173,13 @@ npx serve .
 
 ---
 
-## Academic Context
-
-- **Module:** COM4014 — Web Development
-- **Year:** 2025
-- **Requirement:** Static website using HTML and CSS only; no frameworks
-- **Original content:** All written content is original — no text is reproduced from external sources
-- **Purpose:** Educational demonstration only
 
 ---
 
 ## Author
 
 **Ritik**
-COM4014 Student | 2025
+
 
 ---
 
